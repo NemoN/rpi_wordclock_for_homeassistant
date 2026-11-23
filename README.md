@@ -9,15 +9,36 @@ Control a [Raspberry Pi Wordclock](https://github.com/bk1285/rpi_wordclock) over
 
 ## Installation
 
+Requires Home Assistant Core 2026.3 or newer and a Wordclock reachable from Home Assistant. Use the built-in [Marketplace](https://www.home-assistant.io/integrations/marketplace/) on Home Assistant 2026.11 and newer. On earlier versions, use an existing [HACS installation](https://www.hacs.xyz/docs/use/download/download/).
+
+### Install as a custom repository
+
+[![Open Wordclock in HACS or the Marketplace](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=NemoN&repository=rpi_wordclock_for_homeassistant&category=integration)
+
+Open the repository with the button above and confirm adding it as a custom repository if prompted. Select **Install** in the Marketplace or **Download** in HACS. Restart Home Assistant after downloading with HACS, or when the Marketplace prompts you to restart.
+
+To add it manually, use `https://github.com/NemoN/rpi_wordclock_for_homeassistant`:
+
+- **HACS:** Open **HACS → ⋮ → Custom repositories**, enter the URL, and select **Integration**.
+- **Marketplace:** Open **Settings → Marketplace → Add from link**, enter the URL, and select **Add**. Connect GitHub when prompted. If asked for the repository type, select **Integration**.
+
+Open **Wordclock** in the list to install it.
+
+### Set up the Wordclock
+
+[![Add Wordclock to My Home Assistant](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=rpi_wordclock)
+
+After installation, use this button or open **Settings → Devices & services → Add integration → Wordclock**. Enter your clock's host or URL, for example `http://192.168.1.50`. Include the port if the clock uses a non-default port.
+
+### Manual installation
+
 1. Copy `custom_components/rpi_wordclock` from this repository into Home Assistant's `config/custom_components/` directory so that the manifest is at `config/custom_components/rpi_wordclock/manifest.json`.
 2. Restart Home Assistant.
-3. Open **Settings → Devices & services → Add integration**, select **Wordclock**, and enter your clock's host or URL. Include the port if the clock uses a non-default port.
-
-This version uses the modern Home Assistant light APIs and is intended for Home Assistant Core 2026.3 or newer.
+3. Follow [Set up the Wordclock](#set-up-the-wordclock).
 
 ### Upgrading from the YAML version
 
-Replace the old component files with the contents of the new `custom_components/rpi_wordclock` directory. The existing `light: - platform: rpi_wordclock` configuration is imported on startup. Verify the device and entity IDs in Home Assistant, then remove the old YAML entry. If you customized the previous entity ID, check any dashboards or automations that reference it.
+Install the new version using the steps above. For a manual upgrade, replace the old component files with the contents of the new `custom_components/rpi_wordclock` directory. The existing YAML light platform configuration is imported on startup. Verify the device and entity IDs in Home Assistant, then remove the old YAML entry. If you customized the previous entity ID, check any dashboards or automations that reference it.
 
 ## Tests
 
@@ -29,3 +50,5 @@ python -m pytest
 ```
 
 The tests start a temporary Home Assistant instance and a local Wordclock HTTP fixture.
+
+The integration icon is the [original Wordclock icon by mrksngl](https://github.com/bk1285/rpi_wordclock/commit/b3eb294db7ead726c454d8f76ed6baa7b9b762e1).
