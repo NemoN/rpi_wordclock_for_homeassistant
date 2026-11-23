@@ -1,0 +1,29 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Wordclock verbinden",
+        "data": {"host": "Host oder URL"},
+        "data_description": {"host": "Gib die Adresse der Uhr an. Falls sie einen anderen Port als den Standardport verwendet, gib ihn mit an."}
+      }
+    },
+    "error": {
+      "invalid_host": "Gib einen gültigen Host oder eine HTTP-URL ein.",
+      "cannot_connect": "Die Wordclock-API ist nicht erreichbar. Prüfe Adresse und Firmware."
+    },
+    "abort": {
+      "already_configured": "Diese Wordclock ist bereits eingerichtet.",
+      "invalid_host": "Die bisherige Konfiguration enthält einen ungültigen Host."
+    }
+  },
+  "entity": {
+    "select": {"plugin": {"name": "Plugin"}},
+    "button": {
+      "left": {"name": "Links"},
+      "right": {"name": "Rechts"},
+      "return": {"name": "Eingabe"}
+    },
+    "text": {"scroll_text": {"name": "Lauftext"}},
+    "switch": {"scroll_enabled": {"name": "Lauftext einschalten"}}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to your Wordclock",
+        "data": {"host": "Host or URL"},
+        "data_description": {"host": "Enter the clock's address, including a port if it uses one other than the default."}
+      }
+    },
+    "error": {
+      "invalid_host": "Enter a valid host or HTTP URL.",
+      "cannot_connect": "Could not read the Wordclock API. Check the address and firmware."
+    },
+    "abort": {
+      "already_configured": "This Wordclock is already configured.",
+      "invalid_host": "The legacy configuration contains an invalid host."
+    }
+  },
+  "entity": {
+    "select": {"plugin": {"name": "Plugin"}},
+    "button": {
+      "left": {"name": "Left"},
+      "right": {"name": "Right"},
+      "return": {"name": "Return"}
+    },
+    "text": {"scroll_text": {"name": "Scroll text"}},
+    "switch": {"scroll_enabled": {"name": "Scrolling"}}
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "domain": "rpi_wordclock",
+  "name": "Wordclock",
+  "codeowners": ["@NemoN"],
+  "config_flow": true,
+  "dependencies": ["network"],
+  "documentation": "https://github.com/NemoN/rpi_wordclock_for_homeassistant",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/NemoN/rpi_wordclock_for_homeassistant/issues",
+  "version": "0.2.0"
+}
