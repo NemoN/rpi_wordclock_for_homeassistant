@@ -30,6 +30,12 @@ Open **Wordclock** in the list to install it.
 
 After installation, use this button or open **Settings → Devices & services → Add integration → Wordclock**. Enter your clock's host or URL, for example `http://192.168.1.50`. Include the port if the clock uses a non-default port.
 
+### Automatic discovery
+
+Enable [Wordclock discovery on the Raspberry Pi](https://github.com/NemoN/rpi_wordclock#home-assistant-discovery). When Home Assistant receives the Pi's mDNS announcement and can reach the Wordclock API, the clock appears under **Settings → Devices & services → Discovered**. Select **Configure** to add it.
+
+The discovery ID identifies the same clock after a change of IP address. A manually configured clock is linked to this ID when its saved HTTP address matches the advertised IP or hostname. Manual setup remains available if mDNS is unavailable on your network.
+
 ### Manual installation
 
 1. Copy `custom_components/rpi_wordclock` from this repository into Home Assistant's `config/custom_components/` directory so that the manifest is at `config/custom_components/rpi_wordclock/manifest.json`.

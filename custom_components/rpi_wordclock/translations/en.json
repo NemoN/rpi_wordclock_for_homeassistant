@@ -1,6 +1,10 @@
 {
   "config": {
     "step": {
+      "discovery_confirm": {
+        "title": "Set up the discovered Wordclock",
+        "description": "Home Assistant found a Wordclock at {host}. Confirm to add it."
+      },
       "user": {
         "title": "Connect to your Wordclock",
         "data": {"host": "Host or URL"},
@@ -12,6 +16,8 @@
       "cannot_connect": "Could not read the Wordclock API. Check the address and firmware."
     },
     "abort": {
+      "cannot_connect": "The discovered Wordclock API could not be reached.",
+      "invalid_discovery": "The Wordclock announcement is missing a valid address or device ID.",
       "already_configured": "This Wordclock is already configured.",
       "invalid_host": "The legacy configuration contains an invalid host."
     }
